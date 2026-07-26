@@ -9,8 +9,7 @@ Welcome to the **Dev-Detective** project! This is a client-side application buil
 
 ### Screenshots
 
-<img width="1917" height="1087" alt="Screenshot 2026-07-26 214614" src="https://github.com/user-attachments/assets/6577a790-6574-4a8d-867d-a5d382461d6b" />
-
+<img width="1917" height="1088" alt="Screenshot 2026-07-26 214739" src="https://github.com/user-attachments/assets/eab0f9e7-81a4-428a-8351-5dfbeec70e18" />
 
 ## 🎯 Project Objectives
 
