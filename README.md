@@ -39,11 +39,11 @@ Welcome to the **Dev-Detective** project! This is a client-side application buil
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/dev-detective.git
+    git clone https://github.com/your-username/Dev-Detective.git
     ```
 2.  **Navigate to the project directory:**
     ```bash
-    cd dev-detective
+    cd Dev-Detective
     ```
 3.  **Run the application:**
     *   Open `index.html` directly in your browser.
