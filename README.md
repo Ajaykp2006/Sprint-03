@@ -4,7 +4,7 @@ Welcome to the **Dev-Detective** project! This is a client-side application buil
 
 ## 🚀 Live Demo & Preview
 
-* **Live Demo:** [Insert Your Live Site URL Here (e.g., Vercel, Netlify, GitHub Pages)]
+* **Live Demo:** (https://sprint-03-458bi9qqh-ajaykp2006s-projects.vercel.app/)
 * **QA Demo Video:** [Insert Your Video Link Here (e.g., YouTube, Loom)]
 
 ### Screenshots
