@@ -4,29 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev-Detective | GitHub Search Client</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-
     <div class="container">
         <!-- Header -->
         <header class="header">
             <h1 class="title">Dev-Detective</h1>
-            <button id="mode-btn"><span>DARK</span><div id="mode-icon">🌙</div></button>
+            <div class="header-controls">
+                <button id="battle-toggle-btn">⚔️ BATTLE MODE</button>
+                <button id="mode-btn"><span>DARK</span><div id="mode-icon">🌙</div></button>
+            </div>
         </header>
 
-        <!-- Search Bar -->
-        <div class="search-bar">
+        <!-- Standard Search Bar -->
+        <div class="search-bar" id="standard-search-container">
             <input type="text" id="search-input" placeholder="Search GitHub username..." />
             <span id="error-msg" class="hidden">No results</span>
             <button id="search-btn">Search</button>
         </div>
 
-        <!-- Main Profile Card Component -->
-        <main class="profile-card">
-            <!-- Loading State Spinner -->
+        <!-- Battle Mode Search Bar (Phase 3) -->
+        <div class="search-bar hidden" id="battle-search-container">
+            <input type="text" id="battle-input-1" placeholder="Player 1 username..." />
+            <span class="vs-text">VS</span>
+            <input type="text" id="battle-input-2" placeholder="Player 2 username..." />
+            <button id="battle-btn">Battle!</button>
+        </div>
+
+        <!-- Main Profile Card Component (Phase 1 & 2) -->
+        <main class="profile-card" id="standard-profile-card">
             <div id="loading-spinner" class="spinner hidden"></div>
 
             <div class="profile-content">
@@ -35,7 +44,6 @@
                     <div class="profile-info-wrapper">
                         <div class="name-container">
                             <h2 id="profile-name">The Octocat</h2>
-                            <!-- Username properly set as a clickable anchor tag -->
                             <a id="profile-username" href="#" target="_blank">@octocat</a>
                         </div>
                         <p id="profile-joined">Joined 25 Jan 2011</p>
@@ -45,8 +53,13 @@
                 <p id="profile-bio">
                     This profile has no bio specified. Let's build something amazing together using async JavaScript and the Fetch API.
                 </p>
+                
+                <!-- Phase 1 Fix: Portfolio URL -->
+                <div class="profile-links">
+                    <span class="text-muted">Portfolio: </span>
+                    <a id="profile-portfolio" href="#" target="_blank" class="text-muted">Not Available</a>
+                </div>
 
-                <!-- Phase 2: Top Repositories Section -->
                 <section class="repos-section">
                     <h3>Top Repositories</h3>
                     <ul id="repos-list">
@@ -55,8 +68,34 @@
                 </section>
             </div>
         </main>
-    </div>
 
+        <!-- Battle Mode Results Component (Phase 3) -->
+        <main class="battle-results hidden" id="battle-results-container">
+            <div id="battle-loading-spinner" class="spinner hidden" style="grid-column: span 2;"></div>
+            
+            <div class="battle-grid hidden" id="battle-grid">
+                <!-- Player 1 Card -->
+                <div class="profile-card battle-card" id="player1-card">
+                    <div class="battle-card-content">
+                        <h2 class="battle-status" id="p1-status"></h2>
+                        <img id="p1-avatar" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="P1 Avatar">
+                        <h3 id="p1-name">Player 1</h3>
+                        <p class="star-count">Total Stars: <span id="p1-stars">0</span></p>
+                    </div>
+                </div>
+
+                <!-- Player 2 Card -->
+                <div class="profile-card battle-card" id="player2-card">
+                    <div class="battle-card-content">
+                        <h2 class="battle-status" id="p2-status"></h2>
+                        <img id="p2-avatar" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="P2 Avatar">
+                        <h3 id="p2-name">Player 2</h3>
+                        <p class="star-count">Total Stars: <span id="p2-stars">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
